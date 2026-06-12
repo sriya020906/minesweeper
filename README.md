@@ -29,8 +29,8 @@ A simple Minesweeper game built using FastAPI, SQLite, HTML, CSS, and JavaScript
 ### Clone the repository
 
 ```bash
-git clone <your-repository-url>
-cd <repository-name>
+git clone https://github.com/sriya020906/minesweeper.git
+cd minesweeper
 ```
 
 ### Create virtual environment
