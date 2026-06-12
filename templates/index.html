@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Minesweeper</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        #board {
+            display: inline-grid;
+            gap: 2px;
+            margin-top: 20px;
+        }
+
+        .cell {
+            width: 35px;
+            height: 35px;
+            border: 1px solid #999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background: #ddd;
+            font-weight: bold;
+        }
+
+        .revealed {
+            background: white;
+        }
+
+        select,
+        button {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        #stats,
+        #leaderboard {
+            margin-top: 30px;
+        }
+
+        table {
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #aaa;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Minesweeper</h1>
+
+    <div>
+        <label>Difficulty:</label>
+
+        <select id="difficulty">
+            <option value="easy">Easy (8x8)</option>
+            <option value="medium">Medium (12x12)</option>
+            <option value="hard">Hard (16x16)</option>
+        </select>
+
+        <button onclick="newGame()">
+            New Game
+        </button>
+    </div>
+
+    <h3 id="moves">
+        Moves: 0
+    </h3>
+
+    <div id="board"></div>
+
+    <div id="message"></div>
+
+    <div id="stats">
+        <h2>Statistics</h2>
+
+        <p>Total Games: <span id="total_games">0</span></p>
+        <p>Wins: <span id="wins">0</span></p>
+        <p>Losses: <span id="losses">0</span></p>
+        <p>Win %: <span id="win_percentage">0</span></p>
+        <p>Best Time: <span id="best_time">0</span></p>
+        <p>Average Time: <span id="average_time">0</span></p>
+    </div>
+
+    <div id="leaderboard">
+        <h2>Leaderboard</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Difficulty</th>
+                    <th>Moves</th>
+                    <th>Time (s)</th>
+                </tr>
+            </thead>
+
+            <tbody id="leaderboard-body">
+
+            </tbody>
+        </table>
+    </div>
+
+    <script src="/static/script.js"></script>
+
+</body>
+</html>
